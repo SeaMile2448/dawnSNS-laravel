@@ -37,7 +37,8 @@ Route::get('/top','PostsController@index')->name('top');
 
 Route::get('/profile','UsersController@profile');
 
-Route::get('/search','UsersController@index');
+Route::get('/search','UsersController@search')->name('search');
+Route::post('/search','UsersController@search');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');

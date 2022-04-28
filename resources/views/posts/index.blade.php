@@ -35,7 +35,7 @@
         <form method="POST" action="{{route('articles.update',['article' => $article->id])}}">
             @csrf
             @method('PATCH')
-            <input type="text" value={{$article->post}}>
+            <input type="text" name="post" value={{$article->post}}>
             <input type="image" src="{{asset('images/edit.png')}}">
         </form>
         </div>

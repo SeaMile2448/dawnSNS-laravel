@@ -30,12 +30,11 @@
         <h1><a><img src="images/main_logo.png"></a></h1>
             <div id="">
                 <div id="">
-                    <p>{{$article->user->username}}さん<img src=""></p>
+                    <p>{{$user->username}}さん<img src=""></p>
                 <div>
                 <ul>
                     <li><a href="/top">ホーム</a></li>
                     <li><a href="/profile">プロフィール</a></li>
-
                 </ul>
             </div>
         </div>
@@ -50,7 +49,7 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>{{$article->user->username}}さんの</p>
+                <p>{{$user->username}}さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>
@@ -62,7 +61,7 @@
                 </div>
                 <p class="btn"><a href="">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="">ユーザー検索</a></p>
+            <p class="btn"><a href="{{route('search')}}">ユーザー検索</a></p>
         </div>
     </div>
     <footer>
