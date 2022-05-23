@@ -16,7 +16,7 @@ class UsersController extends Controller
         return view('users.profile')->with(['user'=>$user]);
     }
 
-    //ユーザー検索処理のコード
+    //ユーザー検索処理
     public function search(Request $request){
         $user =Auth::user();
 
