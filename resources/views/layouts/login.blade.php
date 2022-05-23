@@ -27,21 +27,19 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a><img src="images/main_logo.png"></a></h1>
-            <div id="">
-                <div id="">
+            <h1><a href="/top"><img src="images/main_logo.png"></a></h1>
+            <div class="dropdown">
                     <p>{{$user->username}}さん<img src=""></p>
-                <div>
-                <ul>
+                <ul class="dropdown_menu">
                     <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
+                    <li><a href="{{route('profile')}}">プロフィール編集</a></li>
+                    <form method="post" action="{{route('logout')}}">
+                    @csrf
+                    <button type="submit">ログアウト</button>
+                    </form>
                 </ul>
             </div>
         </div>
-        <form method="post" action="{{route('logout')}}">
-            @csrf
-            <button type="submit">ログアウト</button>
-        </form>
     </header>
     <div id="row">
         <div id="container">
@@ -54,12 +52,12 @@
                 <p>フォロー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="">フォローリスト</a></p>
+                <p class="btn"><a href="{{route('followList')}}">フォローリスト</a></p>
                 <div>
                 <p>フォロワー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="">フォロワーリスト</a></p>
+                <p class="btn"><a href="{{route('followerList')}}">フォロワーリスト</a></p>
             </div>
             <p class="btn"><a href="{{route('search')}}">ユーザー検索</a></p>
         </div>

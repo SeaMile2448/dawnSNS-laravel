@@ -12,7 +12,7 @@
 <div class="container">
     @foreach ($articles as $article)
     <div class="user_image">
-        <img src="{{asset('/images/'.$article->images)}}" alt="">
+        <img src="{{asset('/images/dawn.png')}}" alt="">
     </div>
     <div class="username">
         {{$article->user->username}}

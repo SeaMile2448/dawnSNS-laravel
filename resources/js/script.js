@@ -1,5 +1,0 @@
-$(function () {
-
-  $('#modalArea').hide();
-
-});

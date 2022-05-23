@@ -12,8 +12,11 @@ class UsersController extends Controller
 {
     //
     public function profile(){
-        return view('users.profile');
+        $user = Auth::user();
+        return view('users.profile')->with(['user'=>$user]);
     }
+
+    //ユーザー検索処理のコード
     public function search(Request $request){
         $user =Auth::user();
 
@@ -28,6 +31,7 @@ class UsersController extends Controller
             $users =User::all();
         }
         return view('users.search')->with(['user'=>$user, 'users' => $users,]);
-
     }
+
+
 }

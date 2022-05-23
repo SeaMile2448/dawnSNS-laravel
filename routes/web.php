@@ -20,8 +20,6 @@
 
 Route::resource('/articles','PostsController')->except(['index', 'edit', 'show']);
 
-
-
 //ログアウト中のページ
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
@@ -35,14 +33,13 @@ Route::get('/added', 'Auth\RegisterController@added');
 //ログイン中のページ
 Route::get('/top','PostsController@index')->name('top');
 
-Route::get('/profile','UsersController@profile');
+Route::get('/profile','UsersController@profile')->name('profile');
 
 Route::get('/search','UsersController@search')->name('search');
 Route::post('/search','UsersController@search');
 
-Route::get('/follow-list','PostsController@index');
-Route::get('/follower-list','PostsController@index');
-
+Route::get('/follow-list','PostsController@index')->name('followList');
+Route::get('/follower-list','PostsController@index')->name('followerList');
 Route::post('/post/{id}/update','PostsController@update');
 
 Route::post('/logout','Auth\LoginController@logout')->name('logout');
